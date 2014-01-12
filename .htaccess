@@ -1,0 +1,24 @@
+#
+# ===========================================================================================
+#
+# .htaccess
+#
+# Description: Settings for Apache servers.
+#
+# -------------------------------------------------------------------------------------------
+#
+# *******************************************************************************************
+#  Rewrite rules:
+# *******************************************************************************************
+# If using subdirectory - please specify RewriteBase
+# 
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+#  RewriteBase /some/url/if/necessary/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule (.*) index.php/$1 [NC,L]
+</IfModule>
+#
+# *******************************************************************************************
+#
